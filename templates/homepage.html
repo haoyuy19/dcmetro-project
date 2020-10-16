@@ -2,53 +2,66 @@
 <head>
   <!-- import JQuery  -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script
+      src="https://kit.fontawesome.com/0dc4026582.js"
+      crossorigin="anonymous"
+    ></script>
   <!-- double check when directory changes -->
   {% load static %}
-  <script src="{% static 'js/station.js' %}"></script>
-  <h1>DC Metro Fare Calculator</h1>
+  <script src="{% static 'js/station.js' %}" alt="My script"></script>
+  <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet"/>
+  
 </head>
+<body>
+  <div class="nav">
+    <a class="active" href="./homepage.html">Home</a>
+    <a>Page1</a>
+    <a>Page2</a>
+    <a>Page3</a>
+  </div>
+  <div class="title">
+    <h1><i class="fas fa-calculator"></i> DC Metro Fare Calculator</h1>
+  </div>
+  <div class='SelectStation'>
+    <form action="{% url 'price' %}">
+      <!-- <h2>Departing Station</h2>
+      <textarea name="depart" rows="5" cols="40" placeholder="Enter the station code here. If you don't know station code, please select your station below. "></textarea> -->
+      <br/>
+      <p>Departing from: <i class="fas fa-subway"></i> <select name="dp_line">
+        <option disabled selected> Please select a line </option>
+        <option> Red Line </option>
+        <option> Yellow Line </option>
+        <option> Green Line </option>
+        <option> Blue Line </option>
+        <option> Orange Line </option>
+        <option> Silver Line </option>
+      </select>
+     —
+     <select name="depart">
+      <option value=""> Please select a station </option>
+     </select></p>
+        
+      <!-- <h2>Destination Station</h2>
+      <textarea name="arrive" rows="5" cols="40" placeholder="Enter the station code here. If you don't know station code, please select your station below. "></textarea> -->
+      <br/>
+      <p>Destination: <i class="fas fa-subway"></i> <select name="ar_line">
+        <option disabled selected> Please select a line </option>
+        <option> Red Line </option>
+        <option> Yellow Line </option>
+        <option> Green Line </option>
+        <option> Blue Line </option>
+        <option> Orange Line </option>
+        <option> Silver Line </option>
+      </select>
+      —
+     <select name="arrive">
+      <option value=""> Please select a station </option>
+     </select></p>
+    </br>
+     <input type='submit' value="Calculate" />
+    </form>
+    </div>
+    
+</body>
 
-<div class='SelectStation'>
-<form action="{% url 'price' %}">
-  <h2>Departing Station</h2>
-  <textarea name="depart" rows="5" cols="40" placeholder="Enter the station code here. If you don't know station code, please select your station below. "></textarea>
-  <br/>
-  <p> or select an origin station from the list below: </p>
-    <select name="dp_line">
-      <option disabled selected> Please select a line </option>
-      <option> Red Line </option>
-      <option> Yellow Line </option>
-      <option> Green Line </option>
-      <option> Blue Line </option>
-      <option> Orange Line </option>
-      <option> Silver Line </option>
-    </select>
-   —
-   <select name="depart">
-  	<option value=""> Please select a station </option>
-   </select>
-
-  <br/>
-  <h2>Destination Station</h2>
-  <textarea name="arrive" rows="5" cols="40" placeholder="Enter the station code here. If you don't know station code, please select your station below. "></textarea>
-  <br/>
-  <p> or select an origin station from the list below: </p>
-    <select name="ar_line">
-      <option disabled selected> Please select a line </option>
-      <option> Red Line </option>
-      <option> Yellow Line </option>
-      <option> Green Line </option>
-      <option> Blue Line </option>
-      <option> Orange Line </option>
-      <option> Silver Line </option>
-    </select>
-    —
-   <select name="arrive">
-    <option value=""> Please select a station </option>
-   </select>
-  <br/>
-  <h4> Click "Calculate" to know your price! </h4>
-  <input type='submit' value="Calculate" />
-</form>
-</div>
 </html>

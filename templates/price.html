@@ -1,6 +1,22 @@
-<h1>The metro fare for your trip from {{ depart }} to {{ arrive }} in peaktime is</h1>
-{{ peaktime }}
-<h1>The metro fare for your trip from {{ depart }} to {{ arrive }} in offpeaktime is</h1>
-{{ offpeaktime }}
-<h1>The metro fare for your trip from {{ depart }} to {{ arrive }} if you are senior or disabled is</h1>
-{{ seniordisabled }}
+<!DOCTYPE html>
+<head>
+  <script
+      src="https://kit.fontawesome.com/0dc4026582.js"
+      crossorigin="anonymous"
+    ></script>
+  {% load static %}
+  <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container">
+    <p>The metro fare for your trip from {{ depart }} to {{ arrive }} in peaktime is ${{ peaktime }}</p>
+    
+    <p>The metro fare for your trip from {{ depart }} to {{ arrive }} in offpeaktime is ${{ offpeaktime }}</p>
+    
+    <p>The metro fare for your trip from {{ depart }} to {{ arrive }} if you are senior or disabled is ${{ seniordisabled }}</p>
+    
+  </div>
+</body>
+</html>
+
+
